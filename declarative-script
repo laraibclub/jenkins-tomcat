@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('SCM-Checkout') {
+            steps {
+                git branch: 'main', credentialsId: 'git-credential', url: 'https://github.com/laraibclub/jenkins-tomcat.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Build stage'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Test stage'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploy stage'
+            }
+        }
+        stage('Archive') {
+            steps {
+                echo 'Archive stage'
+            }
+        }
+    }
+}
