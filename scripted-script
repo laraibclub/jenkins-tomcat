@@ -1,0 +1,17 @@
+node {
+    stage('SCM-Checkout'){
+        git branch: 'main', credentialsId: 'git-credential', url: 'https://github.com/laraibclub/jenkins-tomcat.git'
+    }
+    stage('Build'){
+        echo "I am in Build Step "
+    }
+    stage('Test'){
+        echo "I am in Test Step "
+    }
+    stage('Deploy'){
+        echo "I am in Deploy Step"
+    }
+    stage('Archive'){
+        echo "I am in Archive Step"
+    }
+}
